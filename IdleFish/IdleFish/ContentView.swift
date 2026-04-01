@@ -16,8 +16,10 @@ struct ContentView: View {
         GeometryReader { proxy in
             //Zstack是一个z轴方向叠加的容器相当于Flutter的Stack
             ZStack(alignment: .bottom){
+                
                 //TabView相当于UITabbarViewController 粗浅对照
                 TabView(selection: $currTab){
+                    /*
                     //其中view相当于UITabBarViewController的rootViewController
                     ForEach(CustomTabbar.allCases,id:\.rawValue) {
                         item in
@@ -27,7 +29,25 @@ struct ContentView: View {
                             .frame(maxWidth: .infinity,maxHeight: .infinity)
                             .background(Color.blue)
                     }
+                    */
+                    //以下是创建好的四个View
+                    HomeView()
+                        .frame(maxWidth: .infinity,maxHeight: .infinity)
+                        .tag(CustomTabbar.home)
+                    NicePlayView()
+                        .frame(maxWidth: .infinity,maxHeight: .infinity)
+                        .background(Color.blue)
+                        .tag(CustomTabbar.niceplay)
+                    MessageView()
+                        .frame(maxWidth: .infinity,maxHeight: .infinity)
+                        .background(Color.purple)
+                        .tag(CustomTabbar.message)
+                    MineView()
+                        .frame(maxWidth: .infinity,maxHeight: .infinity)
+                        .background(Color.orange)
+                        .tag(CustomTabbar.mine)
                 }
+                
                 //让CustomTabbarView相对底部有一个间距,这个距离是苹果定义的安全距离,如何获取
                 //创建自定义tabbarView,闲鱼有个凸起的圆弧 ,从这里传递绑定的属性
                 CustomTabbarView(safeEdgeInsets: proxy.safeAreaInsets, currTab: $currTab)
