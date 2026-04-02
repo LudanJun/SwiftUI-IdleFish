@@ -17,3 +17,7 @@ Privacy - Location Always and When In Use Usage Description
 Privacy - Location Always Usage Description
 
 隐私-位置始终使用说明
+
+Privacy - Location When In Use Usage Description
+
+隐私-使用时的位置使用说明
