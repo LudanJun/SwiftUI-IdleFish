@@ -9,3 +9,8 @@ SwiftUI仿闲鱼APP
 定位权限添加
 
 <img width="2732" height="1210" alt="image" src="https://github.com/user-attachments/assets/13071a91-ddf7-47c8-afc4-8dabd5481518" />
+
+Privacy - Location Always and When In Use Usage Description
+隐私-位置始终和使用时使用说明
+Privacy - Location Always Usage Description
+隐私-位置始终使用说明
