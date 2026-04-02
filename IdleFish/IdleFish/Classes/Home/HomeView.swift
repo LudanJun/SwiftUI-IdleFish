@@ -8,12 +8,14 @@
 import SwiftUI
 struct HomeView: View {
 //    @State var currHomeNavTab: HomeNavTab = .attention // 默认关注界面
+    @StateObject var locationManager =  LocationManager()
     @StateObject var homeVM: HomeViewModel = HomeViewModel()
     var body: some View {
         GeometryReader {
             proxy in
             VStack {
                 HomeNavView()
+                    .environmentObject(locationManager)
                     .frame(maxWidth: .infinity)
                     .environmentObject(homeVM)
 
@@ -36,6 +38,9 @@ struct HomeView: View {
 
                 }
                 .frame(maxHeight: .infinity, alignment: .top)
+                .onAppear{
+                    locationManager.manager.requestLocation()
+                }
             }
         }
     }

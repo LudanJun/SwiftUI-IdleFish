@@ -12,8 +12,6 @@ struct HomeNavView: View {
     // 记录要搜索的关键字
     @State var searchKeyword: String = ""
 
-    @State var homeNavTab: HomeNavTab = .attention
-
     var body: some View {
         VStack {
             // 签到直播提示和标签所在的横向容器
@@ -133,13 +131,27 @@ struct HomeNavView: View {
     HomeNavView()
 }
 
-enum HomeNavTab: String {
-    case attention = "关注"
-    case recommend = "推荐"
-    case location = "北京"
+enum HomeNavTab: Hashable {
+    case attention
+    case recommend
+    case location
+
+    var title: String {
+        switch self {
+        case .attention:
+            return "关注"
+        case .recommend:
+            return "推荐"
+        case .location:
+            return "北京"
+        }
+    }
 }
 
 struct HomeNavTabBtn: View {
+    // EnvironmentObject 进行页面之间的数据传递,使用环境对象,您可以在整个程序的任意页面设置和读取该对象
+
+    @EnvironmentObject var locationManager: LocationManager
     @EnvironmentObject var homeVM: HomeViewModel
 
     // 这个只是传值 不需要后续绑定改变 当前按钮自己代表哪个标签
@@ -156,7 +168,8 @@ struct HomeNavTabBtn: View {
         } label: {
             ZStack(alignment: Alignment.trailing) {
                 // rawValue 获取枚举的值
-                Text(tab.rawValue)
+                let cityName = (tab == .location && locationManager.cityName != nil) ? locationManager.cityName! : tab.title
+                Text(cityName)
                     .font(.system(size: 16, weight: homeVM.currHomeNavTab == tab ? .bold : .medium))
                     .foregroundColor(Color.black.opacity(homeVM.currHomeNavTab == tab ? 0.7 : 0.3))
                     .padding(.horizontal, 15)

@@ -14,9 +14,22 @@
 		8691E4102F7B6F6C00940690 /* IdleFish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IdleFish.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		8691E45C2F7E0F5B00940690 /* Exceptions for "IdleFish" folder in "IdleFish" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 8691E40F2F7B6F6C00940690 /* IdleFish */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		8691E4122F7B6F6C00940690 /* IdleFish */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				8691E45C2F7E0F5B00940690 /* Exceptions for "IdleFish" folder in "IdleFish" target */,
+			);
 			path = IdleFish;
 			sourceTree = "<group>";
 		};
@@ -263,6 +276,10 @@
 				DEVELOPMENT_ASSET_PATHS = "\"IdleFish/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = IdleFish/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "允许定位";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "允许定位";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "允许定位";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -291,6 +308,10 @@
 				DEVELOPMENT_ASSET_PATHS = "\"IdleFish/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = IdleFish/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "允许定位";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "允许定位";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "允许定位";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
