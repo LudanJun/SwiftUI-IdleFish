@@ -9,9 +9,10 @@ import SDWebImageSwiftUI
 import SwiftUI
 
 struct HomeNavView: View {
-    // 记录要搜索的关键字
-    @State var searchKeyword: String = ""
-
+//    // 记录要搜索的关键字
+//    @State var searchKeyword: String = ""
+    @EnvironmentObject var customTabbarVM: CustomTabbarViewModel
+    @State var isActive = false
     var body: some View {
         VStack {
             // 签到直播提示和标签所在的横向容器
@@ -87,7 +88,18 @@ struct HomeNavView: View {
                         .frame(width: 1, height: 20)
                     // 热词滚动条
                     HStack {
+                        // 点击搜索跳转到搜索页面
                         HomeSearchHotKeywordView()
+                            .background(Color.white)
+                            .onTapGesture {
+                                print("push 搜素view")
+                                isActive.toggle()
+                                // 点击后把全局底部tabbar隐藏属性改变
+                                customTabbarVM.atFront.toggle()
+                            }
+                        // 使用NavigationLink进行push,同时NavigationLink需要与NavigationView配合使用才有效果
+                        NavigationLink(destination: SearchResultView(), isActive: $isActive) {
+                        }
                     }
                     .padding(.horizontal, 10)
 //                    // 搜索框
