@@ -85,8 +85,13 @@ struct HomeNavView: View {
                     Divider()
                         .foregroundColor(Color.black.opacity(0.3))
                         .frame(width: 1, height: 20)
-                    // 搜索框
-                    TextField("", text: $searchKeyword)
+                    // 热词滚动条
+                    HStack {
+                        HomeSearchHotKeywordView()
+                    }
+                    .padding(.horizontal, 10)
+//                    // 搜索框
+//                    TextField("", text: $searchKeyword)
 
                     // 搜索按钮
                     Button {
@@ -127,9 +132,9 @@ struct HomeNavView: View {
     }
 }
 
-#Preview {
-    HomeNavView()
-}
+// #Preview {
+//    HomeNavView()
+// }
 
 enum HomeNavTab: Hashable {
     case attention
