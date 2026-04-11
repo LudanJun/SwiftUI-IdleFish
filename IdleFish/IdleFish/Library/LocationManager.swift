@@ -43,7 +43,7 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
             DispatchQueue.main.async {
                 print(name)
                 //闲鱼上只显示城市名称
-                self.cityName = name
+                self.cityName = String(name.prefix(name.count - 1))
             }
         }
     }

@@ -11,6 +11,7 @@ struct HomeView: View {
     @StateObject var locationManager =  LocationManager()
     @StateObject var homeVM: HomeViewModel = HomeViewModel()
     var body: some View {
+        //自定义导航头
         GeometryReader {
             proxy in
             VStack {
