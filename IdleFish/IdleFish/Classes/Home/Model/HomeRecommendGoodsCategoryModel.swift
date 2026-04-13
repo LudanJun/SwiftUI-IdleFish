@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-let HOME_GOODS_CATEGORY_TABS: [HomeRecommendGoodsCategoryTabModel] = [
+let HOME_RECOMMEND_GOODS_CATEGORY_TABS: [HomeRecommendGoodsCategoryTabModel] = [
     HomeRecommendGoodsCategoryTabModel(id: 0, title: "猜你喜欢"),
     HomeRecommendGoodsCategoryTabModel(id: 1, title: "电脑组装"),
     HomeRecommendGoodsCategoryTabModel(id: 2, title: "钢琴"),

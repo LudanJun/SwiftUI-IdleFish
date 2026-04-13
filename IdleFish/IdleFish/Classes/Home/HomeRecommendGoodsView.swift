@@ -14,6 +14,7 @@ struct HomeRecommendGoodsView: View {
             HomeRecommendGoodsCategoryTabTitleView()
             
             //二手商品列表
+            //继续完成商品列表与分类联动,分类悬浮功能
             HomeRecommendGoodsListView()
         }
         .frame(width: SCREEN_WIDTH)

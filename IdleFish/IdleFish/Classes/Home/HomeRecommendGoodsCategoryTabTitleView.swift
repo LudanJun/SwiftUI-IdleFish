@@ -16,20 +16,23 @@ struct HomeRecommendGoodsCategoryTabTitleView: View {
         ZStack(alignment: .trailing) {
             ScrollView(.horizontal, showsIndicators: false) {
                 LazyHGrid(rows: Array(repeating: GridItem(.flexible(), spacing: 0), count: 1), spacing: 20) {
-                    ForEach(HOME_GOODS_CATEGORY_TABS, id: \.self) {
+                    ForEach(HOME_RECOMMEND_GOODS_CATEGORY_TABS, id: \.self) {
                         tab in
+
                         Button {
+                            homeVM.homeRecommendCurrTab = tab
                             withAnimation(.spring()) {
-                                homeVM.currGoodsCategoryTab = tab
+                                // 通过选中tab,计算出index
+                                homeVM.homeRecommendCurrTabIndex = HOME_RECOMMEND_GOODS_CATEGORY_TABS.firstIndex(of: tab)!
                             }
                         } label: {
                             ZStack(alignment: .bottom) {
                                 Text(tab.title)
                                     .font(.system(size: 14))
-                                    .foregroundColor(Color.black.opacity(homeVM.currGoodsCategoryTab == tab ? 1 : 0.5))
+                                    .foregroundColor(Color.black.opacity(homeVM.homeRecommendCurrTab == tab ? 1 : 0.5))
                                     .frame(maxHeight: .infinity)
-                                    .scaleEffect(homeVM.currGoodsCategoryTab == tab ? 1.2 : 1)
-                                if homeVM.currGoodsCategoryTab == tab {
+                                    .scaleEffect(homeVM.homeRecommendCurrTab == tab ? 1.2 : 1)
+                                if homeVM.homeRecommendCurrTab == tab {
                                     Image("home_indicator")
                                         .resizable()
                                         .aspectRatio(contentMode: .fit)
