@@ -20,6 +20,7 @@ struct HomeView: View {
                     HomeNavView()
                         .environmentObject(locationManager)
                         .frame(maxWidth: .infinity)
+                        // 传入当前环境值
                         .environmentObject(homeVM)
 
                     // 在这里添加标签对应的view
@@ -28,8 +29,9 @@ struct HomeView: View {
                             Color.orange
                                 .tag(HomeNavTab.attention)
                                 .frame(maxHeight: .infinity)
-                            Color.blue
+                            HomeRecommendView()
                                 .tag(HomeNavTab.recommend)
+                                .environmentObject(homeVM)
                                 .frame(maxHeight: .infinity)
                             Color.yellow
                                 .tag(HomeNavTab.location)
@@ -42,7 +44,7 @@ struct HomeView: View {
                     .frame(maxHeight: .infinity, alignment: .top)
                     .onAppear {
                         locationManager.manager.requestLocation()
-                        //当界面再次返回到顶部view的时候,需要重新显示tabbar
+                        // 当界面再次返回到顶部view的时候,需要重新显示tabbar
                         customTabbarVM.atFront = true
                     }
                 }

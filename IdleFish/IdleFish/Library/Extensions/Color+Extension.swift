@@ -18,7 +18,9 @@ extension Color {
             opacity: opacity
         )
     }
-
+    
+    /// 给Color添加一个随机颜色
+    /// - Returns: 返回Color
     static func random() -> Color {
         let redInt = Int.random(in: 0 ... 255)
         let greenInt = Int.random(in: 0 ... 255)

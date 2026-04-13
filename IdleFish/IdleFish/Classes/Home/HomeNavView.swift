@@ -61,6 +61,7 @@ struct HomeNavView: View {
                     }
                 }
             }
+            //覆盖在HStack控件上
             .overlay {
                 HStack {
                     HomeNavTabBtn(tab: HomeNavTab.attention)
