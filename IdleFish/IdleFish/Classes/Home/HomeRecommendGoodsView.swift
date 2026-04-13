@@ -12,8 +12,9 @@ struct HomeRecommendGoodsView: View {
     var body: some View {
         VStack(spacing: 0) {
             HomeRecommendGoodsCategoryTabTitleView()
-
-            Color.random()
+            
+            //二手商品列表
+            HomeRecommendGoodsListView()
         }
         .frame(width: SCREEN_WIDTH)
     }

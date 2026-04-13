@@ -12,6 +12,7 @@ struct IdleFishApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+//            HomeRecommendGoodsListView()
         }
     }
 }
