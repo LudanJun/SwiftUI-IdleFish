@@ -9,7 +9,7 @@ import SwiftUI
 
 class HomeViewModel: ObservableObject {
     // 修改应用启动后显示的tab页面为推荐
-    @Published var currHomeNavTab: HomeNavTab = .recommend
+    @Published var currHomeNavTab: HomeNavTab = .attention
     
     //首页header视图的y轴最大值
     @Published var homeRecommendMinY: CGFloat = 0

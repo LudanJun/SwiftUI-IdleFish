@@ -47,10 +47,12 @@ extension HomeRecommendGoodsListView {
             .onEnded { endValue in
 
                 var currTabIndex = homeVM.homeRecommendCurrTabIndex
-
+                /// 拖动右滑，偏移量增加，显示 index 减少
                 if endValue.translation.width > 50 {
                     currTabIndex -= 1
-                } else if endValue.translation.width < -50 {
+                }
+                /// 拖动左滑，偏移量减少，显示 index 增加
+                if endValue.translation.width < -50 {
                     currTabIndex += 1
                 }
 
@@ -59,9 +61,8 @@ extension HomeRecommendGoodsListView {
 
                 // 把数据更新到homeVM的homeRecommendCurrTabIndex上,以便刷新view
                 homeVM.homeRecommendCurrTab = HOME_RECOMMEND_GOODS_CATEGORY_TABS[currTabIndex]
-                withAnimation(.spring()){
+                withAnimation(.spring()) {
                     homeVM.homeRecommendCurrTabIndex = currTabIndex
-                  
                 }
             }
     }

@@ -24,23 +24,8 @@ struct HomeView: View {
                         .environmentObject(homeVM)
 
                     // 在这里添加标签对应的view
-                    ScrollView(.horizontal, showsIndicators: false) {
-                        TabView(selection: $homeVM.currHomeNavTab) {
-                            Color.orange
-                                .tag(HomeNavTab.attention)
-                                .frame(maxHeight: .infinity)
-                            HomeRecommendView()
-                                .tag(HomeNavTab.recommend)
-                                .environmentObject(homeVM)
-                                .frame(maxHeight: .infinity)
-                            Color.yellow
-                                .tag(HomeNavTab.location)
-                                .frame(maxHeight: .infinity)
-                        }
-                        .frame(width: proxy.size.width)
-                        // 指定为分页样式,并且不显示分页指示器
-                        .tabViewStyle(.page(indexDisplayMode: .never))
-                    }
+                    HomeTabView()
+                        .environmentObject(homeVM)
                     .frame(maxHeight: .infinity, alignment: .top)
                     .onAppear {
                         locationManager.manager.requestLocation()
