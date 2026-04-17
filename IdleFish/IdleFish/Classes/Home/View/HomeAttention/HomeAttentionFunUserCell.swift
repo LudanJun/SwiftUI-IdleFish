@@ -8,7 +8,10 @@
 import SDWebImageSwiftUI
 import SwiftUI
 struct HomeAttentionFunUserCell: View {
+    
     var funUserModel: HomeAttentionFunUserModel
+
+    @EnvironmentObject var homeVM: HomeViewModel
 
     @State private var goodsWidth: CGFloat = 0
 
@@ -32,6 +35,9 @@ struct HomeAttentionFunUserCell: View {
                 Spacer()
 
                 Button {
+                    //关注按钮点击事件
+                    homeVM.attentionUserList.append(funUserModel.user!)
+                    
                 } label: {
                     Image("btn_attention_nor")
                         .resizable()

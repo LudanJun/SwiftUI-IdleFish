@@ -73,5 +73,6 @@ struct HomeRecommendGoodsCategoryTabTitleView: View {
 }
 
 #Preview {
-    HomeRecommendGoodsCategoryTabTitleView()
+//    HomeRecommendGoodsCategoryTabTitleView()
+    ContentView()
 }
